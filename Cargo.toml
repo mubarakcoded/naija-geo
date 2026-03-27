@@ -1,6 +1,6 @@
 [package]
 name        = "naija-geo"
-version       = "0.1.0"
+version       = "0.1.1"
 edition       = "2021"
 rust-version  = "1.75"
 description = "Nigerian geopolitical zones, states and local government areas (LGAs) — all 6 zones, 37 states and 774 LGAs with navigation helpers."
