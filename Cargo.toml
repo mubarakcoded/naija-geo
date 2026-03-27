@@ -1,0 +1,22 @@
+[package]
+name        = "naija-geo"
+version     = "0.1.0"
+edition     = "2021"
+description = "Nigerian geopolitical zones, states and local government areas (LGAs) — all 6 zones, 37 states and 774 LGAs with navigation helpers."
+license     = "MIT"
+repository  = "https://github.com/mubarakcoded/naija-geo"
+keywords    = ["nigeria", "geo", "lga", "states", "zones"]
+categories  = ["data-structures"]
+readme      = "README.md"
+
+[dependencies]
+serde  = { version = "1", features = ["derive"], optional = true }
+strsim = { version = "0.11", optional = true }
+
+[features]
+default = []
+serde   = ["dep:serde"]   # Serialize / Deserialize for all public structs
+fuzzy   = ["dep:strsim"]  # enable fuzzy find_by_name on Zone / State / Lga
+
+[dev-dependencies]
+serde_json = "1"
