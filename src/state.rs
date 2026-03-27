@@ -104,10 +104,7 @@ impl State {
 
     /// Return all LGAs in this state.
     pub fn lgas(&self) -> Vec<&'static Lga> {
-        self.lga_codes
-            .iter()
-            .filter_map(|c| Lga::find(c))
-            .collect()
+        self.lga_codes.iter().filter_map(|c| Lga::find(c)).collect()
     }
 
     /// Number of LGAs in this state.

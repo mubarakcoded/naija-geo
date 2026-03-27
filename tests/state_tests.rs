@@ -1,4 +1,4 @@
-use naija_geo::{State, Zone, NaijaGeoError};
+use naija_geo::{NaijaGeoError, State, Zone};
 
 #[test]
 fn all_returns_37_states() {
@@ -13,10 +13,10 @@ fn find_by_code_case_insensitive() {
 
 #[test]
 fn find_by_name_case_insensitive() {
-    assert_eq!(State::find_by_name("lagos").unwrap().code,   "LA");
-    assert_eq!(State::find_by_name("LAGOS").unwrap().code,   "LA");
-    assert_eq!(State::find_by_name("Rivers").unwrap().code,  "RI");
-    assert_eq!(State::find_by_name("FCT").unwrap().code,     "FC");
+    assert_eq!(State::find_by_name("lagos").unwrap().code, "LA");
+    assert_eq!(State::find_by_name("LAGOS").unwrap().code, "LA");
+    assert_eq!(State::find_by_name("Rivers").unwrap().code, "RI");
+    assert_eq!(State::find_by_name("FCT").unwrap().code, "FC");
 }
 
 #[test]
@@ -69,7 +69,7 @@ fn by_zone_returns_correct_states() {
 #[test]
 fn state_zone_traversal() {
     let lagos = State::find("LA").unwrap();
-    let zone  = lagos.zone().unwrap();
+    let zone = lagos.zone().unwrap();
     assert_eq!(zone.code, "SW");
     assert_eq!(zone.name, "South West");
 }

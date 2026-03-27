@@ -10,8 +10,8 @@ fn main() {
             "  [{code}] {name:15} — {sc} states, {lc} LGAs",
             code = z.code,
             name = z.name,
-            sc   = z.state_count(),
-            lc   = z.lga_count(),
+            sc = z.state_count(),
+            lc = z.lga_count(),
         );
     }
 
@@ -19,11 +19,12 @@ fn main() {
     println!("\n=== South West States ===");
     let sw = Zone::find("SW").unwrap();
     for s in sw.states() {
-        println!("  [{code}] {name:15} | Capital: {cap:15} | {lc} LGAs",
+        println!(
+            "  [{code}] {name:15} | Capital: {cap:15} | {lc} LGAs",
             code = s.code,
             name = s.name,
-            cap  = s.capital,
-            lc   = s.lga_count(),
+            cap = s.capital,
+            lc = s.lga_count(),
         );
     }
 
@@ -36,12 +37,12 @@ fn main() {
 
     // ── 4. Navigate upward from an LGA ───────────────────────────────────────
     println!("\n=== Upward traversal from LGA LA020 ===");
-    let lga   = Lga::find("LA020").unwrap();
+    let lga = Lga::find("LA020").unwrap();
     let state = lga.state().unwrap();
-    let zone  = lga.zone().unwrap();
-    println!("  LGA   : {} ({})", lga.name,   lga.code);
+    let zone = lga.zone().unwrap();
+    println!("  LGA   : {} ({})", lga.name, lga.code);
     println!("  State : {} ({})", state.name, state.code);
-    println!("  Zone  : {} ({})", zone.name,  zone.code);
+    println!("  Zone  : {} ({})", zone.name, zone.code);
 
     // ── 5. Duplicate LGA names ────────────────────────────────────────────────
     println!("\n=== All LGAs named 'Surulere' ===");

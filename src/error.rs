@@ -14,9 +14,9 @@ pub enum NaijaGeoError {
 impl fmt::Display for NaijaGeoError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            NaijaGeoError::ZoneNotFound(s)  => write!(f, "Zone not found: '{s}'"),
+            NaijaGeoError::ZoneNotFound(s) => write!(f, "Zone not found: '{s}'"),
             NaijaGeoError::StateNotFound(s) => write!(f, "State not found: '{s}'"),
-            NaijaGeoError::LgaNotFound(s)   => write!(f, "LGA not found: '{s}'"),
+            NaijaGeoError::LgaNotFound(s) => write!(f, "LGA not found: '{s}'"),
         }
     }
 }

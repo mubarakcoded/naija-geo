@@ -1,4 +1,4 @@
-use naija_geo::{Zone, NaijaGeoError};
+use naija_geo::{NaijaGeoError, Zone};
 
 #[test]
 fn all_returns_six_zones() {

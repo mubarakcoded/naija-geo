@@ -61,7 +61,7 @@ fn by_zone_aggregates_correctly() {
 
 #[test]
 fn lga_state_traversal() {
-    let lga   = Lga::find("LA020").unwrap(); // Surulere
+    let lga = Lga::find("LA020").unwrap(); // Surulere
     let state = lga.state().unwrap();
     assert_eq!(state.code, "LA");
     assert_eq!(state.name, "Lagos");
@@ -69,7 +69,7 @@ fn lga_state_traversal() {
 
 #[test]
 fn lga_zone_traversal() {
-    let lga  = Lga::find("LA020").unwrap(); // Surulere
+    let lga = Lga::find("LA020").unwrap(); // Surulere
     let zone = lga.zone().unwrap();
     assert_eq!(zone.code, "SW");
     assert_eq!(zone.name, "South West");

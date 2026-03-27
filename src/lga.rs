@@ -60,13 +60,14 @@ impl Lga {
     /// as "Surulere" which exists in both Lagos and Oyo).
     pub fn find_all_by_name(name: &str) -> Vec<&'static Lga> {
         let lower = name.trim().to_lowercase();
-        LGAS.iter().filter(|l| l.name.to_lowercase() == lower).collect()
+        LGAS.iter()
+            .filter(|l| l.name.to_lowercase() == lower)
+            .collect()
     }
 
     /// Find an LGA by code and return a `Result`.
     pub fn get(code: &str) -> Result<&'static Lga, crate::error::NaijaGeoError> {
-        Lga::find(code)
-            .ok_or_else(|| crate::error::NaijaGeoError::LgaNotFound(code.to_string()))
+        Lga::find(code).ok_or_else(|| crate::error::NaijaGeoError::LgaNotFound(code.to_string()))
     }
 
     /// Return all LGAs in a given state (by state code, case-insensitive).

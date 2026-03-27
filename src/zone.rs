@@ -56,8 +56,7 @@ impl Zone {
 
     /// Find a zone by code and return a `Result`, useful for `?`-propagation.
     pub fn get(code: &str) -> Result<&'static Zone, crate::error::NaijaGeoError> {
-        Zone::find(code)
-            .ok_or_else(|| crate::error::NaijaGeoError::ZoneNotFound(code.to_string()))
+        Zone::find(code).ok_or_else(|| crate::error::NaijaGeoError::ZoneNotFound(code.to_string()))
     }
 
     // ── Fuzzy (feature = "fuzzy") ────────────────────────────────────────────
